@@ -1,13 +1,7 @@
-SPOOKY GAMING — WEBSITE V1
+SPOOKY GAMING — WEBSITE V2
 
-Preview: Open index.html in Chrome, Edge or Firefox. Scroll to see the hero move up and fade out. No server or dependencies required.
+UPDATE GITHUB: Extract this ZIP. Upload ALL files inside the extracted folder (not the ZIP or folder itself) to the root of your existing spooky-gamin.github.io repository. Commit changes; this replaces index.html and README.txt and adds the media files. No changes to Pages settings needed if already enabled. Preview by opening index.html locally with all assets alongside it.
 
-Publish on GitHub Pages:
-1. Sign in to GitHub, and create a public repository named YOUR-GITHUB-USERNAME.github.io (substitute your exact GitHub username).
-2. Upload index.html to the root of the repository, then commit it.
-3. Open repository Settings > Pages. Under Build and deployment, choose Deploy from a branch. Select main and / (root), then Save. If already enabled, no change is needed.
-4. Use the website URL displayed under Settings > Pages once the deployment succeeds.
+Branding: supplied animated logo and DUBBY wordmark converted to transparent animated WebP, original animated smoke MP4, official static logo, forest banner and five Ent emotes. Muted background video, reduced-motion fallback, and footer pause control. No new social links, partner URLs, discount codes, dates or personal information were invented. Fanatical mark remains text and gaming setup photo/game screenshots are not supplied.
 
-What's included: responsive homepage, scroll-linked hero fade and upward parallax, fixed navigation, mobile menu, accessible reduced-motion support, creator sections, Twitch and TikTok links.
-
-Before promoting the site publicly: confirm your about copy, actual stream schedule, YouTube and community links, partner URLs/discount codes, contact address, equipment list, and replace the temporary tree mark and illustrations with your official logo and imagery. No affiliate IDs, schedule times or contact details were invented. No tracking or third-party embeds are included. GitHub Pages is static hosting; the site does not currently show real-time live status.
+To customize later: replace matching filenames (same format), or edit index.html for copy and links. All assets sit in the root for easy iPad uploads.
