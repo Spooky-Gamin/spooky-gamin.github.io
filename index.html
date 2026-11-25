@@ -61,51 +61,51 @@
 </script>
 <script>
 (()=>{
-// Edit this list to change the games. Local JPG files take precedence over remote artwork.
+// Edit this list to change the game ticker. All artwork is hosted locally.
 const games = [
   {
     "name": "Fortnite",
-    "local": "fortnite.jpg",
-    "remote": "https://cdn1.epicgames.com/spt-assets/prod-fn/FNBR_43-00_MSEE_Logo_Xbox_Launcher_Superhero_1920x1080-bhb16.png"
+    "local": "fortnite.png"
   },
   {
     "name": "WARDOGS",
-    "local": "wardogs.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/1867240/header.jpg"
+    "local": "IMG_4468.jpeg"
   },
   {
     "name": "Ghosts of Tabor",
-    "local": "tabor.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/1957780/header.jpg"
+    "local": "IMG_4467.png"
   },
   {
     "name": "Farming Simulator 25",
-    "local": "farming.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/2300320/header.jpg"
+    "local": "farming.png"
   },
   {
     "name": "ARC Raiders",
-    "local": "arc-raiders.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/1808500/header.jpg"
+    "local": "000d0f4b-a3e4-496d-bccc-40f99350b8f7_rw_3840.jpg"
   },
   {
     "name": "The Legend of California",
-    "local": "legend-of-california.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/2550530/header.jpg"
+    "local": "legend-of-california.png"
   },
   {
     "name": "American Truck Simulator",
-    "local": "ats.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/270880/header.jpg"
+    "local": "ats.png"
   },
   {
     "name": "Grand Theft Auto V",
-    "local": "gta-v.jpg",
-    "remote": "https://cdn.cloudflare.steamstatic.com/steam/apps/3240220/header.jpg"
+    "local": "gta-v.png"
+  },
+  {
+    "name": "CHORUS",
+    "local": "IMG_4469.jpeg"
+  },
+  {
+    "name": "Variety",
+    "local": "28FFBB68-6CD2-4329-B09B-15AFD20555CB.png"
   }
 ];
 const viewport=document.querySelector('.game-ticker'),track=document.getElementById('game-track'),button=document.getElementById('ticker-toggle'),media=matchMedia('(prefers-reduced-motion: reduce)');
-function makeGroup(clone){const group=document.createElement('div');group.className='game-group';if(clone)group.setAttribute('aria-hidden','true');for(const game of games){const tile=document.createElement('div');tile.className='game-tile';const label=document.createElement('span');label.textContent=game.name;tile.append(label);const img=new Image();img.alt=game.name;img.decoding='async';img.onload=()=>{label.hidden=true;};img.onerror=()=>{if(img.dataset.retried){img.remove();label.hidden=false;}else{img.dataset.retried='1';img.src=game.remote;}};img.src=game.local;tile.append(img);group.append(tile);}return group;}
+function makeGroup(clone){const group=document.createElement('div');group.className='game-group';if(clone)group.setAttribute('aria-hidden','true');for(const game of games){const tile=document.createElement('div');tile.className='game-tile';const label=document.createElement('span');label.textContent=game.name;tile.append(label);const img=new Image();img.alt=game.name;img.decoding='async';img.onload=()=>{label.hidden=true;};img.onerror=()=>{img.remove();label.hidden=false;};img.src=game.local;tile.append(img);group.append(tile);}return group;}
 const first=makeGroup(false);track.append(first,makeGroup(true),makeGroup(true));let paused=false,hover=false,focus=false,touch=false,last=0,pos=0,internal=false;
 button.addEventListener('click',()=>{paused=!paused;button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'Resume game ticker':'Pause game ticker';});
 viewport.addEventListener('mouseenter',()=>hover=true);viewport.addEventListener('mouseleave',()=>hover=false);viewport.addEventListener('focusin',()=>focus=true);viewport.addEventListener('focusout',()=>focus=false);viewport.addEventListener('touchstart',()=>touch=true,{passive:true});viewport.addEventListener('touchend',()=>touch=false,{passive:true});viewport.addEventListener('touchcancel',()=>touch=false,{passive:true});
